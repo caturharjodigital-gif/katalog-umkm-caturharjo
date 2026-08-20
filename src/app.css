@@ -1,0 +1,43 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  /* Palet Biru Royal */
+  --color-primary: #1D4ED8;
+  --color-primary-hover: #1E40AF;
+  --color-primary-soft: #DBEAFE;
+  --color-background: #F5F7FB;
+  --color-surface: #EBF3FF;
+  --color-text: #0F172A;
+  --color-muted: #64748B;
+  --color-border: #E3E9F0;
+  --color-action-yellow: #FFC53D;
+  --color-badge-yellow-soft: #FFF3D6;
+  --color-badge-yellow-text: #8A5A00;
+  --color-action-green: #15803D;
+  --color-badge-green-text: #166534;
+  --color-badge-green-soft: #E8F6EE;
+
+  /* Palet Badge */
+  --color-badge-orange-soft: #FFEDD5;
+  --color-badge-orange-text: #9A3412;
+  --color-badge-orange-border: #FED7AA;
+  --color-badge-blue-soft: #DBEAFE;
+  --color-badge-blue-text: #1E40AF;
+  --color-badge-blue-action: #4799FF;
+  --color-badge-green-action: #4ECE82;
+
+  /* Palet Lain */
+  --color-danger: #DC2626;
+  --color-danger-soft: #FEE2E2;
+
+  /* Font */
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Base: apply font + bg */
+@layer base {
+  html { font-family: var(--font-sans); }
+  body { background-color: var(--color-background); color: var(--color-text); }
+}
