@@ -9,4 +9,4 @@ export const SISTEM_HARGA_OPTIONS = [
 ];
 
 // Center peta Caturharjo / Tamanmartani - Kalasan, Sleman
-export const CENTER_PETA = { lat: -7.73, lng: 110.45 };
+export const CENTER_PETA = { lat: -7.71495, lng: 110.485072 };
