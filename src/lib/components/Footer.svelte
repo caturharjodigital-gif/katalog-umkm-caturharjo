@@ -23,7 +23,7 @@
 			<p class="text-xs md:text-sm text-white/60">© {year} KKN-M 29921 UNY CATURHARJO. All rights reserved.</p>
 
 			<!-- Admin link -->
-			<a href="/admin/login" class="text-[11px] md:text-sm text-white/70 underline decoration-white/30 underline-offset-2 transition hover:text-white">Admin Page</a>
+			<a href="/admin/login" class="text-[11px] text-white/70 underline decoration-white/30 underline-offset-2 transition hover:text-white">Admin Page</a>
 		</div>
 	</div>
 </footer>
