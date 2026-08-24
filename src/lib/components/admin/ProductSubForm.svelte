@@ -30,14 +30,15 @@
 					<button
 						type="button"
 						onclick={() => removeItem(idx)}
-						class="rounded-full p-1.5 text-danger hover:bg-danger-soft"
+						class="rounded-full p-1.5 text-danger hover:bg-danger-soft cursor-pointer"
 						aria-label="Hapus produk {idx + 1}"
 					>
-						<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-							><polyline points="3 6 5 6 21 6" /><path
-								d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"
-							/></svg
-						>
+						<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<polyline points="3 6 5 6 21 6"/>
+							<path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+							<line x1="10" y1="11" x2="10" y2="17"/>
+							<line x1="14" y1="11" x2="14" y2="17"/>
+						</svg>
 					</button>
 				{/if}
 			</div>
@@ -96,7 +97,7 @@
 	<button
 		type="button"
 		onclick={addItem}
-		class="inline-flex items-center gap-2 rounded-full border border-border bg-white px-4 py-2 text-sm font-semibold text-text hover:bg-background"
+		class="inline-flex items-center gap-2 rounded-lg border-2 border-primary bg-white px-4 md:px-6 py-1.5 md:py-2.5 text-xs md:text-sm font-semibold text-primary hover:bg-background cursor-pointer"
 	>
 		<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
 			><path d="M12 5v14M5 12h14" /></svg

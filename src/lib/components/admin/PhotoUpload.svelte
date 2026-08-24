@@ -132,14 +132,14 @@
 					<button
 						type="button"
 						onclick={() => fileInput?.click()}
-						class="rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-text shadow-sm hover:bg-background"
+						class="rounded-lg bg-white px-4 py-1.5 text-xs font-semibold text-text shadow-sm hover:bg-background cursor-pointer"
 					>
 						Ganti Foto
 					</button>
 					<button
 						type="button"
 						onclick={clear}
-						class="rounded-full border border-white bg-white/90 px-4 py-1.5 text-xs font-semibold text-danger shadow-sm hover:bg-white"
+						class="rounded-lg border border-white bg-white/90 px-4 py-1.5 text-xs font-semibold text-danger shadow-sm hover:bg-white cursor-pointer"
 					>
 						Hapus Foto
 					</button>

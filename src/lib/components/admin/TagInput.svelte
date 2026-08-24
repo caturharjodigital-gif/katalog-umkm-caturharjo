@@ -56,15 +56,15 @@
 			: 'border-border'}"
 	>
 		{#each tags as tag, i}
-			<span class="inline-flex items-center gap-1 rounded-full bg-badge-yellow-soft px-2.5 py-0.5 text-xs font-medium text-badge-yellow-text">
+			<span class="inline-flex items-center gap-1 rounded-lg bg-badge-yellow-soft px-2.5 py-0.5 text-xs font-medium text-badge-yellow-text">
 				{tag}
 				<button
 					type="button"
 					onclick={() => removeTag(i)}
-					class="ml-1 rounded-full p-0.5 hover:bg-black/5"
+					class="ml-1 rounded-lg p-0.5 hover:bg-danger/10 cursor-pointer"
 					aria-label="Hapus {tag}"
 				>
-					<svg class="h-3 w-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+					<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
 						><path d="M6 18L18 6M6 6l12 12" /></svg
 					>
 				</button>
@@ -91,7 +91,7 @@
 				<button
 					type="button"
 					onclick={() => addTag(s)}
-					class="rounded-full border border-border bg-white px-2.5 py-1 text-xs font-medium text-text hover:border-primary hover:text-primary"
+					class="rounded-lg border border-border bg-white px-2.5 py-1 text-xs font-medium text-text hover:border-primary hover:text-primary cursor-pointer"
 				>
 					+ {s}
 				</button>

@@ -8,14 +8,8 @@
 		values = $bindable({}),
 		errors = {},
 		mode = 'create',
-		existingBadgeSet = [],
-		onSubmit = null
+		existingBadgeSet = []
 	} = $props();
-
-	// Normalize defaults
-	let foto_utama = $derived(values.foto_utama ?? '');
-	let badge_khusus = $derived(values.badge_khusus ?? []);
-	let produk_layanan = $derived(values.produk_layanan ?? [{ nama_produk: '', foto_produk: '', range_harga_produk: '', daftar_harga: [] }]);
 
 	let kategoriOpen = $state(false);
 	let sistemHargaOpen = $state(false);
@@ -42,19 +36,11 @@
 	let descLen = $derived((values.deskripsi || '').length);
 </script>
 
-<form
-	method="POST"
-	class="space-y-6"
-	onsubmit={(e) => {
-		if (onSubmit) {
-			onSubmit(e);
-		}
-	}}
->
+<div class="space-y-6">
 	<!-- Sync hidden fields consumed by +page.server.js safeParse -->
-	<input type="hidden" name="foto_utama" value={foto_utama} />
-	<input type="hidden" name="badge_khusus" value={JSON.stringify(badge_khusus)} />
-	<input type="hidden" name="produk_layanan" value={JSON.stringify(produk_layanan)} />
+	<input type="hidden" name="foto_utama" value={values.foto_utama ?? ''} />
+	<input type="hidden" name="badge_khusus" value={JSON.stringify(values.badge_khusus ?? [])} />
+	<input type="hidden" name="produk_layanan" value={JSON.stringify(values.produk_layanan ?? [])} />
 
 	<!-- IDENTITAS USAHA -->
 	<section class="rounded-xl border border-border bg-white p-4 md:p-5">
@@ -196,7 +182,7 @@
 					name="lat"
 					type="text"
 					bind:value={values.lat}
-					placeholder="-7.71495"
+					placeholder="Contoh: -7.71495"
 					class="mt-1 w-full rounded-lg border bg-white px-3 py-2 text-sm text-text placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 {errors.lat
 						? 'border-danger'
 						: 'border-border'}"
@@ -211,7 +197,7 @@
 					name="lng"
 					type="text"
 					bind:value={values.lng}
-					placeholder="110.485072"
+					placeholder="Contoh: 110.485072"
 					class="mt-1 w-full rounded-lg border bg-white px-3 py-2 text-sm text-text placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 {errors.lng
 						? 'border-danger'
 						: 'border-border'}"
@@ -281,7 +267,7 @@
 			<div>
 				<label for="deskripsi" class="text-xs font-semibold text-text"
 					>Deskripsi UMKM <span class="text-danger">*</span>
-					<span class="font-normal text-muted">· {descLen}/600</span></label
+					<span class="font-normal text-muted">· {(values.deskripsi || '').length}/600</span></label
 				>
 				<textarea
 					id="deskripsi"
@@ -368,4 +354,4 @@
 			<ProductSubForm bind:items={values.produk_layanan} errors={errors} />
 		</div>
 	</section>
-</form>
+</div>
