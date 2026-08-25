@@ -32,7 +32,7 @@
 	<title>Tambah UMKM — Admin</title>
 </svelte:head>
 
-<div class="mx-auto max-w-3xl px-5 py-6 md:px-8 md:py-8">
+<div class="mx-auto max-w-4xl px-5 py-6 md:px-8 md:py-8">
 	<nav class="mb-4 flex items-center gap-1 text-sm text-muted" aria-label="breadcrumb">
 		<a href="/admin" class="hover:text-primary">Admin</a>
 		<span class="text-muted/50">

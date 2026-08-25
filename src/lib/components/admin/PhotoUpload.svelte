@@ -81,9 +81,9 @@
 	let previewSrc = $derived(localPreview || url);
 </script>
 
-<div class="space-y-2">
+<div class="min-w-0 space-y-2 overflow-hidden">
 	<div
-		class="relative flex min-h-32 items-center justify-center overflow-hidden rounded-lg border-2 border-dashed bg-white px-4 py-6 text-center {error ||
+		class="relative flex aspect-video min-w-0 items-center justify-center overflow-hidden rounded-lg border-2 border-dashed bg-white px-4 py-6 text-center {error ||
 		uploadError
 			? 'border-danger'
 			: dragging
@@ -118,15 +118,16 @@
 						/></svg
 					>
 				</div>
-				<p class="text-sm font-medium text-text">
-					Drop image here or <button
+				<p class="text-xs md:text-sm font-medium text-text">
+					Drop image here or 
+					<button
 						type="button"
 						onclick={() => fileInput?.click()}
-						class="text-primary underline decoration-primary/30 underline-offset-2 hover:text-primary-hover"
-						>Select</button
+						class="text-primary underline decoration-primary/30 underline-offset-2 hover:text-primary-hover cursor-pointer hover:underline"
+					>Select</button
 					>
 				</p>
-				<p class="text-xs text-muted">Rekomendasi 16:9 · {helpText}</p>
+				<p class="text-[11px] md:text-xs text-muted">Rekomendasi 16:9 · {helpText}</p>
 			{:else}
 				<div class="flex gap-2">
 					<button
@@ -162,8 +163,8 @@
 	/>
 
 	{#if url}
-		<p class="truncate text-xs text-muted">
-			URL: <a href={url} target="_blank" rel="noreferrer" class="text-primary underline">{url}</a>
+		<p class="min-w-0 overflow-hidden break-all text-xs text-muted">
+			URL: <a href={url} target="_blank" rel="noreferrer" class="break-all text-primary underline">{url}</a>
 		</p>
 	{/if}
 

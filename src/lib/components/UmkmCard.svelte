@@ -16,7 +16,7 @@
 	</div>
 	<div class="flex flex-col gap-2 p-4">
 		<h3 class="text-sm md:text-base font-semibold leading-tight text-text">{umkm.nama_usaha}</h3>
-		<p class="line-clamp-2 text-xs md:text-sm leading-relaxed text-muted">{umkm.deskripsi}</p>
+		<p class="line-clamp-2 text-xs leading-relaxed text-muted">{umkm.deskripsi}</p>
 		<div class="mt-1 flex flex-wrap items-center gap-1.5">
 			<BadgeKategori kategori={umkm.kategori} />
 			{#each badges as b}

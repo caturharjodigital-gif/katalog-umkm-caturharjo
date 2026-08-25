@@ -253,14 +253,14 @@
 	</section>
 
 	<!-- KONTEN & VISUAL -->
-	<section class="rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Konten & Visual</h3>
 
 		<div class="mt-4 grid gap-4">
 			<div>
 				<span class="text-xs font-semibold text-text">Foto Utama <span class="text-danger">*</span></span>
 				<div class="mt-1">
-					<PhotoUpload bind:url={values.foto_utama} label="Foto utama" required helpText="Rekomendasi 16:9, max 1MB." error={errors.foto_utama || ''} />
+					<PhotoUpload bind:url={values.foto_utama} label="Foto utama" required helpText="JPG/PNG ≤1MB" error={errors.foto_utama || ''} />
 				</div>
 			</div>
 

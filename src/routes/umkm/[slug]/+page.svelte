@@ -30,7 +30,7 @@
 	<!-- Foto utama / banner -->
 	<div class="relative w-full overflow-hidden bg-surface">
 		{#if item.foto_utama && !item.foto_utama.includes('placeholder')}
-			<img src={item.foto_utama} alt={item.nama_usaha} class="h-56 w-full object-cover md:h-[340px]" fetchpriority="high" />
+			<img src={item.foto_utama} alt={item.nama_usaha} class="h-56 w-full object-cover aspect-video md:h-[420px]" fetchpriority="high" />
 		{:else}
 			<div class="flex h-56 w-full items-center justify-center bg-surface md:h-[340px]">
 				<span class="text-6xl text-muted/30">{item.nama_usaha[0]}</span>
