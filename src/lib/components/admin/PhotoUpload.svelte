@@ -44,11 +44,16 @@
 			return;
 		}
 
+		const previousUrl = url;
+
 		const reader = new FileReader();
 		reader.onload = () => (localPreview = String(reader.result || ''));
 		reader.readAsDataURL(file);
 
 		await doUpload(file);
+		if (previousUrl && previousUrl !== url && previousUrl.includes('.public.blob.vercel-storage.com')) {
+			deleteBlob(previousUrl);
+		}
 	}
 
 	async function doUpload(file) {
@@ -71,11 +76,24 @@
 		}
 	}
 
+	async function deleteBlob(urlToDelete) {
+		if (!urlToDelete || !urlToDelete.includes('.public.blob.vercel-storage.com')) return;
+		try {
+			await fetch('/api/blob/delete', {
+				method: 'POST',
+				headers: { 'content-type': 'application/json' },
+				body: JSON.stringify({ url: urlToDelete })
+			});
+		} catch {}
+	}
+
 	function clear() {
+		const old = url;
 		url = '';
 		localPreview = '';
 		uploadError = '';
 		if (fileInput) fileInput.value = '';
+		if (old) deleteBlob(old);
 	}
 
 	let previewSrc = $derived(localPreview || url);

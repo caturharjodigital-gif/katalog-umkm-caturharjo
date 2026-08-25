@@ -33,11 +33,29 @@ export const actions = {
 		const data = await request.formData();
 		const id = String(data.get('id') || '').trim();
 		if (!id) return fail(400, { error: 'ID tidak valid.' });
+
+		// Collect blobs first then delete row then delete blobs
+		let blobUrls = [];
+		try {
+			const rows = await db.select().from(umkm).where(eq(umkm.id, id));
+			if (rows.length) {
+				const r = rows[0];
+				const { collectBlobUrls } = await import('$lib/server/blob.js');
+				blobUrls = collectBlobUrls(r);
+			}
+		} catch {}
+
 		try {
 			await db.delete(umkm).where(eq(umkm.id, id));
-			return { success: true, deletedId: id };
 		} catch (e) {
 			return fail(500, { error: e?.message || 'Gagal menghapus.' });
 		}
+
+		for (const u of blobUrls) {
+			const { deleteBlobUrl } = await import('$lib/server/blob.js');
+			await deleteBlobUrl(u);
+		}
+
+		return { success: true, deletedId: id };
 	}
 };

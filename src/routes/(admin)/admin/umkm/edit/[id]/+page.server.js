@@ -105,6 +105,12 @@ export const actions = {
 		const existing = await db.select().from(umkm).where(eq(umkm.id, id));
 		if (existing.length === 0) return fail(404, { error: 'UMKM tidak ditemukan.' });
 
+		const oldRow = existing[0];
+		const oldUrls = [oldRow.foto_utama, ...(oldRow.produk_layanan || []).map((p) => p?.foto_produk)].filter(
+			(u) => typeof u === 'string' && u.includes('.public.blob.vercel-storage.com')
+		);
+		const newUrls = new Set([v.foto_utama, ...(v.produk_layanan || []).map((p) => p?.foto_produk)].filter(Boolean));
+
 		const patch = {
 			nama_usaha: v.nama_usaha,
 			nama_pemilik: v.nama_pemilik,
@@ -129,6 +135,14 @@ export const actions = {
 			await db.update(umkm).set(patch).where(eq(umkm.id, id));
 		} catch (e) {
 			return fail(500, { errors: {}, values: parsed, error: e?.message || 'Gagal menyimpan.' });
+		}
+
+		// Cleanup orphan blobs: foto yang diganti/dihapus di edit
+		for (const u of oldUrls) {
+			if (!newUrls.has(u)) {
+				const { deleteBlobUrl } = await import('$lib/server/blob.js');
+				await deleteBlobUrl(u);
+			}
 		}
 
 		throw redirect(303, '/admin');
