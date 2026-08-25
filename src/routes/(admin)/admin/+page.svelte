@@ -1,7 +1,9 @@
 <script>
 	import { enhance } from '$app/forms';
+	import { invalidateAll } from '$app/navigation';
 	import BadgeKategori from '$lib/components/BadgeKategori.svelte';
 	import DeleteModal from '$lib/components/admin/DeleteModal.svelte';
+	
 
 	let { data, form } = $props();
 
@@ -160,7 +162,7 @@
 </div>
 
 <!-- Hidden form to drive delete action + modal -->
-<form method="POST" action="?/delete" bind:this={formNode} use:enhance style="display:none">
+<form method="POST" action="?/delete" bind:this={formNode} use:enhance={() => { return async ({ result, update }) => { if (result.type === 'success') { modalOpen = false; pendingId = null; pendingName = ''; await update(); await invalidateAll(); } else { await update(); } }; }} style="display:none">
 	<input type="hidden" name="id" value={pendingId || ''} />
 </form>
 
