@@ -41,7 +41,7 @@
 <div class="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
 	<!-- Header -->
 	<div class="text-center">
-		<h1 class="text-2xl font-extrabold text-text md:text-3xl lg:text-4xl">Daftar UMKM Caturharjo</h1>
+		<h1 class="text-xl font-extrabold text-text md:text-2xl lg:text-3xl">Daftar UMKM Caturharjo</h1>
 		<p class="mt-2 text-sm md:text-base text-muted">
 			Temukan berbagai usaha lokal di Padukuhan Caturharjo, Tamanmartani
 		</p>

@@ -1,6 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 	let path = $derived($page.url.pathname);
+	let open = $state(false);
+
+	$effect(() => {
+		// auto-close on route change
+		path;
+		open = false;
+	});
 
 	function isActive(href) {
 		if (href === '/') return path === '/';
@@ -43,7 +50,7 @@
 		</div>
 
 		<!-- Mobile -->
-		<details class="relative md:hidden">
+		<details bind:open class="relative md:hidden">
 			<summary class="list-none cursor-pointer rounded-lg border border-border p-2 text-muted">
 				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
 			</summary>
