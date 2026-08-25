@@ -11,17 +11,12 @@
 
 <!-- Header bar biru — sesuai Pemetaan_Random_Map.png -->
 <div class="bg-primary">
-	<div class="flex mx-auto justify-between max-w-7xl px-5 py-2 md:px-8 md:py-3">
-		<div>
-			<h1 class="text-xl font-bold text-white md:text-2xl">Peta Sebaran UMKM</h1>
-			<p class="mt-1 text-sm text-white/80">Klik penanda untuk melihat detail UMKM.</p>
-		</div>
-		<div>
-			<!-- Meta count -->
-			{#if pins.length > 0}
-			<p class="text-sm text-white/80">{pins.length} UMKM ditampilkan di peta</p>
-			{/if}
-		</div>
+	<div class="flex mx-auto flex-col max-w-7xl px-5 py-2 md:px-8 md:py-3">
+		<h1 class="text-lg font-bold text-white md:text-xl lg:text-2xl">Peta Sebaran UMKM</h1>
+		<p class="mt-1 text-[11px] md:text-xs lg:text-sm text-white/80">Klik penanda untuk melihat detail UMKM.</p>
+		{#if pins.length > 0}
+		<p class="text-[11px] text-white/80">{pins.length} UMKM ditampilkan di peta</p>
+		{/if}
 	</div>
 </div>
 
