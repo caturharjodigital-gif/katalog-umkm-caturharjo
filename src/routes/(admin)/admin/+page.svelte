@@ -1,14 +1,28 @@
 <script>
 	import { enhance } from '$app/forms';
-	import { invalidateAll } from '$app/navigation';
+	import { invalidateAll, goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import BadgeKategori from '$lib/components/BadgeKategori.svelte';
 	import DeleteModal from '$lib/components/admin/DeleteModal.svelte';
+	import Toast from '$lib/components/Toast.svelte';
 	
 
 	let { data, form } = $props();
 
 	let rows = $derived(data?.rows || []);
 	let count = $derived(rows.length);
+
+	let toastMsg = $derived(data?.toast || form?.success && `UMKM "${form?.deletedId || ''}" berhasil dihapus.` || '');
+	let toastType = $derived(form?.success ? 'success' : data?.toast ? 'success' : '');
+
+	$effect(() => {
+		if (data?.toast) {
+			const t = setTimeout(() => {
+				goto('/admin', { replaceState: true });
+			}, 4000);
+			return () => clearTimeout(t);
+		}
+	});
 
 	let modalOpen = $state(false);
 	let pendingId = $state(null);
@@ -165,6 +179,8 @@
 <form method="POST" action="?/delete" bind:this={formNode} use:enhance={() => { return async ({ result, update }) => { if (result.type === 'success') { modalOpen = false; pendingId = null; pendingName = ''; await update(); await invalidateAll(); } else { await update(); } }; }} style="display:none">
 	<input type="hidden" name="id" value={pendingId || ''} />
 </form>
+
+<Toast message={toastMsg} type={toastType || 'success'} />
 
 <DeleteModal
 	bind:open={modalOpen}

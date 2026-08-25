@@ -134,6 +134,6 @@ export const actions = {
 			return fail(500, { errors: {}, values: parsed, error: e?.message || 'Gagal menyimpan.' });
 		}
 
-		throw redirect(303, '/admin');
+		throw redirect(303, `/admin?toast=UMKM "${encodeURIComponent(v.nama_usaha)}" berhasil ditambahkan.`);
 	}
 };

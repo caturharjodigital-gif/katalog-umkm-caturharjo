@@ -4,10 +4,11 @@ import { umkm } from '$lib/server/schema.js';
 import { eq } from 'drizzle-orm';
 import { auth } from '$lib/server/auth.js';
 
-export async function load({ request, parent }) {
+export async function load({ request, parent, url }) {
 	const { user } = await parent();
 	const rows = await db.select().from(umkm);
-	return { rows, user };
+	const toast = url.searchParams.get('toast') ? decodeURIComponent(url.searchParams.get('toast')) : null;
+	return { rows, user, toast };
 }
 
 export const actions = {
