@@ -1,3 +1,9 @@
-# allow crawling everything by default
 User-agent: *
-Disallow:
+Allow: /
+
+# Admin tidak perlu diindeks
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap utama
+Sitemap: https://umkm-caturharjo.web.id/sitemap.xml
