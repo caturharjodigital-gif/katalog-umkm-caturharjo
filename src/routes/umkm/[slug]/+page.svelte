@@ -65,7 +65,7 @@
 				<path fill="currentColor" d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z" />
 			</svg>
 
-			<h2 class="text-lg font-semibold text-text">Tentang Kami</h2>
+			<h2 class="text-lg md:text-xl font-semibold text-text">Tentang Kami</h2>
 		</div>
 		<div class="mt-2 h-px w-full bg-muted"></div>
 		<p class="mt-3 text-sm leading-relaxed text-muted whitespace-pre-wrap">{item.deskripsi}</p>
@@ -161,32 +161,7 @@
 			{#if produkLayanan.length > 0}
 				<div class="mt-4 grid grid-cols-1 gap-4 md:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3">
 					{#each produkLayanan as produk}
-						<div class="overflow-hidden rounded-xl border border-border bg-white pb-4">
-							<!-- Image area: single image -->
-							<div class="relative aspect-4/3 w-full overflow-hidden bg-surface">
-								{#if produk.foto_produk}
-									<img src={produk.foto_produk} alt={produk.nama_produk} loading="lazy" class="h-full w-full object-cover" />
-								{:else}
-									<div class="flex h-full w-full items-center justify-center">
-										<svg class="h-6 w-6 text-muted/20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-											<rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-											<circle cx="8.5" cy="8.5" r="1.5"/>
-											<path d="M21 15l-5-5L5 21"/>
-										</svg>
-									</div>
-								{/if}
-							</div>
-
-							<!-- Info -->
-							<div class="px-3 pt-3">
-								<h4 class="text-sm font-bold text-text">{produk.nama_produk}</h4>
-								{#if produk.range_harga_produk}
-									<p class="mt-1 text-sm font-semibold text-primary">{produk.range_harga_produk}</p>
-								{:else}
-									<p class="mt-1 text-xs italic text-muted">{fallbackHarga(produk.range_harga_produk)}</p>
-								{/if}
-							</div>
-						</div>
+						<ProductCard {produk}/>
 					{/each}
 				</div>
 			{:else}
