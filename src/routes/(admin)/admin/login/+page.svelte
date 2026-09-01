@@ -51,9 +51,21 @@
 			<button
 				type="submit"
 				disabled={loading}
-				class="mt-2 w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover disabled:opacity-60 cursor-pointer"
+				class="mt-2 w-full flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-hover disabled:opacity-60 cursor-pointer"
 			>
-				{loading ? 'Memproses...' : 'Masuk'}
+				
+				{#if !loading}
+				<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 48 48">
+					<path d="M0 0h48v48H0z" fill="none" />
+					<g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+						<path d="M23.992 6H6v36h18" />
+						<path d="m25 33l-9-9l9-9m17 8.992H16" />
+					</g>
+				</svg>
+				Masuk
+				{:else}
+				Memproses...
+				{/if}
 			</button>
 		</form>
 	</div>

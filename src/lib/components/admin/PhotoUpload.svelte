@@ -137,12 +137,12 @@
 					>
 				</div>
 				<p class="text-xs md:text-sm font-medium text-text">
-					Drop image here or 
+					Tarik foto ke sini atau
 					<button
 						type="button"
 						onclick={() => fileInput?.click()}
 						class="text-primary underline decoration-primary/30 underline-offset-2 hover:text-primary-hover cursor-pointer hover:underline"
-					>Select</button
+					>Pilih</button
 					>
 				</p>
 				<p class="text-[11px] md:text-xs text-muted">Rekomendasi 16:9 · {helpText}</p>
@@ -181,8 +181,8 @@
 	/>
 
 	{#if url}
-		<p class="min-w-0 overflow-hidden break-all text-xs text-muted">
-			URL: <a href={url} target="_blank" rel="noreferrer" class="break-all text-primary underline">{url}</a>
+		<p class="flex min-w-0 items-start gap-1 overflow-hidden text-xs text-muted">
+			<span class="shrink-0">URL:</span><a href={url} target="_blank" rel="noreferrer" class="min-w-0 flex-1 break-all text-primary underline">{url}</a>
 		</p>
 	{/if}
 

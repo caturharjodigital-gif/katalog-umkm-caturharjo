@@ -47,9 +47,9 @@
 		}
 
 		if (group.length > 1) {
-			map.fitBounds(L.latLngBounds(group), { padding: [40, 40], maxZoom: 14 });
+			map.fitBounds(L.latLngBounds(group), { padding: [40, 40], maxZoom: 12 });
 		} else if (group.length === 1) {
-			map.setView(group[0], 14);
+			map.setView(group[0], 12);
 		}
 
 		setTimeout(() => map.invalidateSize(), 200);

@@ -12,7 +12,7 @@
 			type="text"
 			{placeholder}
 			bind:value
-			class="h-11 w-full rounded-l-lg border border-border border-r-0 bg-white pl-11 pr-4 text-sm text-text placeholder:text-muted focus:border-primary focus:outline-none focus:ring-0"
+			class="h-11 w-full rounded-l-lg border border-border border-r-0 bg-white pl-11 pr-4 text-xs md:text-sm text-text placeholder:text-muted focus:border-primary focus:outline-none focus:ring-0"
 		/>
 	</div>
 	<button

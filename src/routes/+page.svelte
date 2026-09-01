@@ -42,7 +42,7 @@
 	<!-- Background image -->
 	<img src={latarWebsite} alt="" class="absolute inset-0 h-full w-full object-cover" fetchpriority="high" />
 	<!-- Overlay -->
-	<div class="absolute inset-0 bg-text/80"></div>
+	<div class="absolute inset-0 bg-text/60"></div>
 	<div class="relative flex justify-center mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-40">
 		<div class="max-w-full flex flex-col justify-center items-center">
 			<h1 class="text-2xl md:text-3xl lg:text-5xl font-bold leading-tight text-white text-center">
@@ -59,12 +59,11 @@
 			<form onsubmit={handleSearch} class="mt-6 flex max-w-lg md:min-w-2xl items-center">
 				<div class="relative flex-1 flex justify-between bg-white py-1 px-4 md:py-2 md:px-8 rounded-full">
                     <div class="flex-1 flex gap-2 items-center">
-                        <svg class="absolute left-4 top-1/2 h-3 w-3 md:h-5 md:w-5 -translate-y-1/2 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                         <input                  
                             type="text"     
                             bind:value={searchQ}
-                            placeholder="Cari UMKM, produk, atau layanan..."
-                            class="h-8 md:h-11 w-full border-0 pl-4 text-xs md:text-sm text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-white/60"
+                            placeholder="Cari UMKM atau produk..."
+                            class="h-8 md:h-11 w-full border-0 pl-0 text-xs md:text-sm text-text placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-white/60"
                         />
                     </div>
                     <button type="submit" class="rounded-full bg-primary py-1 md:py-2 px-4 md:px-8 text-xs md:text-sm font-semibold text-white transition hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-white/30 cursor-pointer">
@@ -107,12 +106,12 @@
 </section>
 
 <!-- CTA Peta — bg primary -->
-<section class="bg-primary py-0 md:py-12">
-	<div class="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-12">
+<section class="bg-primary py-4 md:py-6">
+	<div class="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
 		<div class="grid grid-cols-1 gap-2 md:gap-8 md:grid-cols-2">
-           <div class="w-full mx-auto">
-                <div class="flex h-auto w-72 md:h-60 md:w-92 items-center justify-center rounded-xl bg-transparent">
-                    <img src={paperMap} alt="" class="h-full w-full object-cover" fetchpriority="high" />
+           <div class="w-full mx-auto flex justify-center">
+                <div class="flex  items-center justify-center rounded-xl bg-transparant">
+                    <img src={paperMap} alt="" class="h-auto w-80 md:h-60 md:w-96 object-cover" fetchpriority="high" />
                 </div>
            </div>
             <div class="flex flex-col justify-center space-y-6">
@@ -121,7 +120,7 @@
                     <p class="mt-2 text-sm md:text-base leading-relaxed text-white/80 flex text-center md:text-left">Lihat lokasi UMKM di seluruh Padukuhan Caturharjo melalui peta interaktif ini. Temukan UMKM terdekat dari lokasi Anda dengan mudah.</p>
                 </div>
                 <div class="flex justify-center md:justify-start">
-                    <a href="/pemetaan" class="inline-flex items-center rounded-full bg-action-yellow px-6 py-2.5 text-sm font-semibold text-main transition hover:bg-action-yellow/80">
+                    <a href="/pemetaan" class="inline-flex items-center rounded-lg bg-action-yellow px-6 py-2.5 text-sm font-semibold text-main transition hover:bg-action-yellow/80">
                         Lihat Peta Lengkap
                     </a>
                 </div>

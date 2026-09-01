@@ -36,14 +36,14 @@
 	let descLen = $derived((values.deskripsi || '').length);
 </script>
 
-<div class="space-y-6">
+<div class="min-w-0 space-y-6 overflow-hidden">
 	<!-- Sync hidden fields consumed by +page.server.js safeParse -->
 	<input type="hidden" name="foto_utama" value={values.foto_utama ?? ''} />
 	<input type="hidden" name="badge_khusus" value={JSON.stringify(values.badge_khusus ?? [])} />
 	<input type="hidden" name="produk_layanan" value={JSON.stringify(values.produk_layanan ?? [])} />
 
 	<!-- IDENTITAS USAHA -->
-	<section class="rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Identitas Usaha</h3>
 
 		<div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -139,7 +139,7 @@
 	</section>
 
 	<!-- KONTAK & LOKASI -->
-	<section class="rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Kontak & Lokasi</h3>
 
 		<div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -286,7 +286,7 @@
 	</section>
 
 	<!-- PRICING & SKEMA BIAYA -->
-	<section class="rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Pricing & Skema Biaya</h3>
 
 		<div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -348,7 +348,7 @@
 	</section>
 
 	<!-- PRODUK & LAYANAN -->
-	<section class="rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Produk & Layanan Unggulan</h3>
 		<div class="mt-4">
 			<ProductSubForm bind:items={values.produk_layanan} errors={errors} />

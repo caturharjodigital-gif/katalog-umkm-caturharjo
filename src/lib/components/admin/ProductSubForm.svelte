@@ -21,9 +21,9 @@
 	}
 </script>
 
-<div class="space-y-4">
+<div class="min-w-0 space-y-4 overflow-hidden">
 	{#each items as item, idx}
-		<div class="relative rounded-xl border border-border bg-white p-4 shadow-sm">
+		<div class="relative min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 shadow-sm">
 			<div class="mb-3 flex items-center justify-between">
 				<h4 class="text-sm font-semibold text-text">Produk {idx + 1}</h4>
 				{#if items.length > 1}
@@ -43,7 +43,7 @@
 				{/if}
 			</div>
 
-			<div class="grid gap-3">
+			<div class="grid min-w-0 gap-3">
 				<div>
 					<label for="produk-nama-{idx}" class="text-xs font-semibold text-text"
 						>Nama Produk <span class="text-danger">*</span></label

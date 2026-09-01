@@ -64,11 +64,11 @@
 			<UmkmForm bind:values {errors} mode="create" {existingBadgeSet} />
 
 			<div class="mt-6 flex items-center justify-end gap-3">
-				<a href="/admin" class="rounded-lg border border-border bg-white px-4 md:px-5 py-1.5 md:py-2.5 text-xs md:text-sm font-semibold text-text hover:bg-background">Batal</a>
+				<a href="/admin" class="rounded-lg border border-border bg-white px-4 md:px-5 py-2 md:py-2.5 text-xs md:text-sm font-semibold text-text hover:bg-background">Batal</a>
 				<button
 					type="submit"
 					disabled={submitting}
-					class="rounded-lg bg-primary px-4 md:px-6 py-1.5 md:py-2.5 text-xs md:text-sm font-semibold text-white hover:bg-primary-hover disabled:opacity-60 cursor-pointer"
+					class="rounded-lg bg-primary px-4 md:px-6 py-2 md:py-2.5 text-xs md:text-sm font-semibold text-white hover:bg-primary-hover disabled:opacity-60 cursor-pointer"
 				>
 					{submitting ? 'Menyimpan...' : 'Simpan UMKM'}
 				</button>

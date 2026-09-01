@@ -51,16 +51,15 @@
 		<!-- Search pill -->
 		<form onsubmit={handleSearch} class="mx-auto flex w-full items-center">
 			<div class="relative flex-1">
-				<svg class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 				<input
 					type="text"
 					bind:value={searchVal}
-					placeholder="Cari UMKM, produk, atau layanan…"
-					class="h-11 w-full rounded-l-lg border border-border border-r-0 bg-white pl-11 pr-4 text-sm text-text placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+					placeholder="Cari UMKM atau produk..."
+					class="h-11 w-full rounded-l-lg border border-border border-r-0 bg-white pl-3 pr-4 text-sm text-text placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
 				/>
 			</div>
 			<button type="submit" class="inline-flex h-11 items-center justify-center rounded-r-lg bg-primary px-5 text-white transition hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-primary/30 cursor-pointer">
-				<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+				<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
 			</button>
 		</form>
 	
