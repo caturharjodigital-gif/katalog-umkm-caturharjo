@@ -35,7 +35,7 @@
 </script>
 
 <svelte:head>
-	<title>Daftar UMKM — UMKM Caturharjo</title>
+	<title>UMKM Caturharjo — Daftar UMKM</title>
 </svelte:head>
 
 <div class="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">

@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import logoWebsite from '$lib/assets/logo-website.svg'
 	let path = $derived($page.url.pathname);
 	let open = $state(false);
 
@@ -15,16 +16,13 @@
 	}
 </script>
 
-<header class="sticky top-0 z-40 border-b border-border bg-white">
+<header class="sticky top-0 z-40 border-b border-border bg-surface">
 	<nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
 		<!-- Logo -->
 		<a href="/" class="flex items-center gap-2.5">
-			<span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-primary">
-				<svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-					<path d="M12 3.5L2 11.5V20a1 1 0 001 1h5.5a1 1 0 001-1v-4.5h5V21a1 1 0 001 1H21a1 1 0 001-1V11.5L12 3.5z"/>
-				</svg>
-			</span>
-			<span class="text-sm md:text-[16px] font-bold tracking-tight text-primary">UMKM Caturharjo</span>
+			<img src="{logoWebsite}" alt="Logo" class="w-7 h-7 md:w-8 md:h-8">
+			<span class="text-lg md:text-xl font-bold tracking-tight text-primary">UMKM</span>
+			<span class="text-lg md:text-xl font-bold tracking-tight text-yellow-600">Caturharjo</span>
 		</a>
 
 		<!-- Desktop -->

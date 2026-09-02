@@ -34,10 +34,10 @@
 </script>
 
 <svelte:head>
-	<title>Beranda — UMKM Caturharjo</title>
+	<title>UMKM Caturharjo — Katalog Digital UMKM Padukuhan Caturharjo</title>
 </svelte:head>
 
-<!-- Hero: latar gapura real -->
+<!-- Herosection -->
 <section class="relative overflow-hidden bg-text">
 	<!-- Background image -->
 	<img src={latarWebsite} alt="" class="absolute inset-0 h-full w-full object-cover" fetchpriority="high" />

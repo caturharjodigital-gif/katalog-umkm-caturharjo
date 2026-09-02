@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Peta Sebaran UMKM — UMKM Caturharjo</title>
+	<title>UMKM Caturharjo — Peta Sebaran UMKM</title>
 </svelte:head>
 
 <!-- Header bar biru — sesuai Pemetaan_Random_Map.png -->
