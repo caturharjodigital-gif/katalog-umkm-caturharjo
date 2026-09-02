@@ -9,6 +9,15 @@ export const auth = betterAuth({
 	emailAndPassword: { enabled: true, requireEmailVerification: false },
 	secret: process.env.BETTER_AUTH_SECRET || 'dev-secret-placeholder-please-set-env',
 	baseURL: process.env.BETTER_AUTH_URL || 'http://localhost:5173',
+	rateLimit: {
+		enabled: true,
+		window: 60,
+		max: 100,
+		storage: 'memory',
+		customRules: {
+			'/sign-in/email': { window: 60, max: 5 }
+		}
+	},
 	advanced: {
 		crossSubDomainCookies: { enabled: false }
 	}

@@ -28,6 +28,11 @@ export const actions = {
 			});
 
 			if (!res.ok) {
+				if (res.status === 429) {
+					const retry = res.headers.get('X-Retry-After');
+					const s = retry ? ` Coba lagi dalam ${retry} detik.` : ' Coba lagi nanti.';
+					return fail(429, { error: 'Terlalu banyak percobaan.' + s, email });
+				}
 				let msg = 'Email atau password salah.';
 				try {
 					const body = await res.json();
