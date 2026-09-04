@@ -35,6 +35,7 @@
 
 <svelte:head>
 	<title>UMKM Caturharjo — Katalog Digital UMKM Padukuhan Caturharjo</title>
+	<meta name="description" content="Katalog digital UMKM Padukuhan Caturharjo, Tamanmartani, Kalasan, Sleman — cari kuliner, jasa, agribisnis, hubungi via WhatsApp & lihat di peta." />
 </svelte:head>
 
 <!-- Herosection -->
