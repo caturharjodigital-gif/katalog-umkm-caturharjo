@@ -116,10 +116,10 @@
 								</td>
 								<td class="px-4 py-3">
 									<div class="flex items-center justify-end gap-2">
-										<a href="/umkm/{row.id}" target="_blank" rel="noreferrer" class="rounded-full px-3 py-1 text-xs font-semibold text-primary hover:underline">
+										<a href="/umkm/{row.id}" target="_blank" rel="noreferrer" class="rounded-full px-3 py-1 md:px-4 md:py-2 text-xs font-semibold text-primary hover:underline">
 											Lihat
 										</a>
-										<a href="/admin/umkm/edit/{row.id}" class="rounded-lg border border-primary bg-white px-3 py-1 text-xs font-semibold text-text hover:bg-background">
+										<a href="/admin/umkm/edit/{row.id}" class="rounded-lg border border-primary bg-white px-3 py-1 md:px-4 md:py- text-xs font-semibold text-text hover:bg-background">
 											Edit
 										</a>
 										<button type="button" onclick={() => openDelete(row)} class="rounded-lg p-1.5 text-danger hover:bg-danger-soft" aria-label="Hapus {row.nama_usaha}">

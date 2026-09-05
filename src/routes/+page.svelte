@@ -2,7 +2,7 @@
 	import UmkmCard from '$lib/components/UmkmCard.svelte';
 	import CategoryCard from '$lib/components/CategoryCard.svelte';
 	import { KATEGORI_OPTIONS } from '$lib/constants.js';
-	import latarWebsite from '$lib/assets/latar_website.jpg';
+	import latarWebsite from '$lib/assets/latar-website2.jpeg';
     import paperMap from '$lib/assets/paper-map.svg'
 
 	let { data } = $props();
