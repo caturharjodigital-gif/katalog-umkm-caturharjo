@@ -169,7 +169,7 @@
 			{/if}
 
 			<!-- Disclaimer M7 -->
-			<p class="mt-6 text-center text-xs italic text-muted">*Harga dapat berubah sewaktu-waktu. Hubungi pemilik untuk harga terbaru.</p>
+			<p class="mt-6 text-center text-xs italic text-muted">*Gambar mungkin tidak akurat. Harga dapat berubah sewaktu-waktu. Hubungi pemilik untuk harga terbaru.</p>
 		</div>
 	</div>
 {/if}
