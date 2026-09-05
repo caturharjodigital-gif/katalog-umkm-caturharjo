@@ -47,7 +47,7 @@
 	<div class="relative flex justify-center mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-40">
 		<div class="max-w-full flex flex-col justify-center items-center">
 			<h1 class="text-2xl md:text-3xl lg:text-5xl font-bold leading-tight text-white text-center">
-				Selamat Datang di Katalog <span class="whitespace-nowrap">UMKM Digital</span>
+				Selamat Datang di Katalog <span class="whitespace-nowrap">Digital UMKM</span>
 			</h1>
 			<h1 class="text-xl md:text-4xl lg:text-5xl font-bold leading-tight text-white">
 				Padukuhan Caturharjo
