@@ -36,14 +36,14 @@
 	let descLen = $derived((values.deskripsi || '').length);
 </script>
 
-<div class="min-w-0 space-y-6 overflow-hidden">
+<div class="min-w-0 space-y-6">
 	<!-- Sync hidden fields consumed by +page.server.js safeParse -->
 	<input type="hidden" name="foto_utama" value={values.foto_utama ?? ''} />
 	<input type="hidden" name="badge_khusus" value={JSON.stringify(values.badge_khusus ?? [])} />
 	<input type="hidden" name="produk_layanan" value={JSON.stringify(values.produk_layanan ?? [])} />
 
 	<!-- IDENTITAS USAHA -->
-	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="relative z-30 min-w-0 rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Identitas Usaha</h3>
 
 		<div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -139,7 +139,7 @@
 	</section>
 
 	<!-- KONTAK & LOKASI -->
-	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="relative z-10 min-w-0 rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Kontak & Lokasi</h3>
 
 		<div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -253,7 +253,7 @@
 	</section>
 
 	<!-- KONTEN & VISUAL -->
-	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="relative z-10 min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Konten & Visual</h3>
 
 		<div class="mt-4 grid gap-4">
@@ -286,7 +286,7 @@
 	</section>
 
 	<!-- PRICING & SKEMA BIAYA -->
-	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="relative z-20 min-w-0 rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Pricing & Skema Biaya</h3>
 
 		<div class="mt-4 grid gap-4 md:grid-cols-2">
@@ -348,7 +348,7 @@
 	</section>
 
 	<!-- PRODUK & LAYANAN -->
-	<section class="min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
+	<section class="relative z-0 min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Produk & Layanan Unggulan</h3>
 		<div class="mt-4">
 			<ProductSubForm bind:items={values.produk_layanan} errors={errors} />
