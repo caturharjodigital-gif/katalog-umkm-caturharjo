@@ -61,7 +61,7 @@
 				</div>
 
 				<div>
-					<label for="produk-range-{idx}" class="text-xs font-semibold text-text">Range Harga Produk</label>
+					<label for="produk-range-{idx}" class="text-xs font-semibold text-text">Rentang Harga Produk</label>
 					<input
 						id="produk-range-{idx}"
 						type="text"

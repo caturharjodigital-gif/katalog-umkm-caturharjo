@@ -212,7 +212,7 @@
 					name="google_maps"
 					type="url"
 					bind:value={values.google_maps}
-					placeholder="https://maps.google.com/?q=-7.71495,110.485072"
+					placeholder="https://maps.app.goo.gl/UT8..."
 					class="mt-1 w-full rounded-lg border bg-white px-3 py-2 text-sm text-text placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 {errors.google_maps
 						? 'border-danger'
 						: 'border-border'}"
@@ -331,7 +331,7 @@
 			</div>
 
 			<div>
-				<label for="range_harga" class="text-xs font-semibold text-text">Range Harga <span class="text-danger">*</span></label>
+				<label for="range_harga" class="text-xs font-semibold text-text">Rentang Harga <span class="text-danger">*</span></label>
 				<input
 					id="range_harga"
 					name="range_harga"

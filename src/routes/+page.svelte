@@ -1,5 +1,6 @@
 <script>
 	import UmkmCard from '$lib/components/UmkmCard.svelte';
+	import CallToAction from '$lib/components/CallToAction.svelte';
 	import CategoryCard from '$lib/components/CategoryCard.svelte';
 	import { KATEGORI_OPTIONS } from '$lib/constants.js';
 	import latarWebsite from '$lib/assets/latar-website2.jpeg';
@@ -76,6 +77,8 @@
 	</div>
 </section>
 
+<CallToAction />
+
 <!-- Preview 3 UMKM -->
 <section class="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-12">
 	<div class="flex items-center justify-between">
@@ -121,8 +124,12 @@
                     <p class="mt-2 text-sm md:text-base leading-relaxed text-white/80 flex text-center md:text-left">Lihat lokasi UMKM di seluruh Padukuhan Caturharjo melalui peta interaktif ini. Temukan UMKM terdekat dari lokasi Anda dengan mudah.</p>
                 </div>
                 <div class="flex justify-center md:justify-start">
-                    <a href="/pemetaan" class="inline-flex items-center rounded-lg bg-action-yellow px-6 py-2.5 text-sm font-semibold text-main transition hover:bg-action-yellow/80">
-                        Lihat Peta Lengkap
+                    <a href="/pemetaan" class="inline-flex items-center gap-2 rounded-lg bg-action-yellow px-6 py-2.5 text-sm font-semibold text-main transition hover:scale-105 hover:brightness-110">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 16 16">
+							<path d="M0 0h16v16H0z" fill="none" />
+							<path fill="currentColor" fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.5.5 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8zm1 12.98l4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z" />
+						</svg>
+						Lihat Peta Lengkap
                     </a>
                 </div>
             </div>
