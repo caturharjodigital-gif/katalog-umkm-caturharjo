@@ -1,7 +1,11 @@
 <script>
 	import PhotoUpload from './PhotoUpload.svelte';
 
-	let { items = $bindable([{ nama_produk: '', foto_produk: '', range_harga_produk: '', daftar_harga: [] }]), errors = {} } = $props();
+	let {
+		items = $bindable([{ nama_produk: '', foto_produk: '', range_harga_produk: '', daftar_harga: [] }]),
+		errors = {},
+		onuploading = () => {}
+	} = $props();
 
 	function addItem() {
 		items = [...items, { nama_produk: '', foto_produk: '', range_harga_produk: '', daftar_harga: [] }];
@@ -74,7 +78,7 @@
 				<div>
 					<span class="text-xs font-semibold text-text">Foto Produk</span>
 					<div class="mt-1">
-						<PhotoUpload bind:url={item.foto_produk} label="Foto produk {idx + 1}" helpText="Opsional · JPG/PNG ≤1MB" />
+						<PhotoUpload bind:url={item.foto_produk} label="Foto produk {idx + 1}" helpText="Opsional · JPG/PNG ≤1MB" {onuploading} />
 					</div>
 				</div>
 

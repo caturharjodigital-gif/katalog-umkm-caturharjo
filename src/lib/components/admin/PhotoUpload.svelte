@@ -5,7 +5,8 @@
 		required = false,
 		error = '',
 		maxBytes = 1024 * 1024,
-		helpText = 'JPG/PNG ≤1MB, rasio 16:9.'
+		helpText = 'JPG/PNG ≤1MB, rasio 16:9.',
+		onuploading = () => {}
 	} = $props();
 
 	let dragging = $state(false);
@@ -58,6 +59,7 @@
 
 	async function doUpload(file) {
 		uploading = true;
+		onuploading(true);
 		try {
 			const form = new FormData();
 			form.set('file', file);
@@ -73,6 +75,7 @@
 			uploadError = e?.message || String(e);
 		} finally {
 			uploading = false;
+			onuploading(false);
 		}
 	}
 

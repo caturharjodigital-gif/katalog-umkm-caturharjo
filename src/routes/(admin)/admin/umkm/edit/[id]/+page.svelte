@@ -1,5 +1,6 @@
 <script>
 	import { enhance } from '$app/forms';
+	import { untrack } from 'svelte';
 	import UmkmForm from '$lib/components/admin/UmkmForm.svelte';
 
 	let { data, form } = $props();
@@ -24,10 +25,15 @@
 		produk_layanan: data?.values?.produk_layanan ?? [{ nama_produk: '', foto_produk: '', range_harga_produk: '', daftar_harga: [] }]
 	});
 
-	// If form failed, restore entered values (preserve id)
+	// If form failed, restore entered values once per fail (preserve id)
+	let lastForm = $state(null);
+	let uploads = $state(0);
 	$effect(() => {
-		if (form?.values) {
-			values = { ...values, ...form.values, id: values.id };
+		const fv = form?.values;
+		if (fv && fv !== lastForm) {
+			lastForm = fv;
+			const id = untrack(() => values.id);
+			values = { ...fv, id };
 		}
 	});
 
@@ -69,14 +75,17 @@
 				};
 			}}
 		>
-			<UmkmForm bind:values {errors} mode="edit" {existingBadgeSet} />
+			<UmkmForm bind:values {errors} mode="edit" {existingBadgeSet} onuploading={(v) => (uploads += v ? 1 : -1)} />
 
+			{#if uploads > 0}
+				<p class="mt-3 text-xs font-medium text-primary">Menunggu upload foto selesai…</p>
+			{/if}
 			<div class="mt-6 flex items-center justify-end gap-3">
 				<a href="/admin" class="rounded-lg border border-border bg-white px-4 md:px-5 py-1.5 md:py-2.5 text-xs md:text-sm font-semibold text-text hover:bg-background">Batal</a>
 				<button
 					type="submit"
-					disabled={submitting}
-					class="rounded-lg bg-primary px-4 md:px-6 py-1.5 md:py-2.5 text-xs md:text-sm font-semibold text-white hover:bg-primary-hover disabled:opacity-60 cursor-pointer"
+					disabled={submitting || uploads > 0}
+					class="rounded-lg bg-primary px-4 md:px-6 py-1.5 md:py-2.5 text-xs md:text-sm font-semibold text-white hover:bg-primary-hover disabled:opacity-60 cursor-pointer disabled:cursor-not-allowed"
 				>
 					{submitting ? 'Menyimpan...' : 'Simpan Perubahan'}
 				</button>

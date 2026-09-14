@@ -8,7 +8,8 @@
 		values = $bindable({}),
 		errors = {},
 		mode = 'create',
-		existingBadgeSet = []
+		existingBadgeSet = [],
+		onuploading = () => {}
 	} = $props();
 
 	let kategoriOpen = $state(false);
@@ -260,7 +261,7 @@
 			<div>
 				<span class="text-xs font-semibold text-text">Foto Utama <span class="text-danger">*</span></span>
 				<div class="mt-1">
-					<PhotoUpload bind:url={values.foto_utama} label="Foto utama" required helpText="JPG/PNG ≤1MB" error={errors.foto_utama || ''} />
+					<PhotoUpload bind:url={values.foto_utama} label="Foto utama" required helpText="JPG/PNG ≤1MB" error={errors.foto_utama || ''} {onuploading} />
 				</div>
 			</div>
 
@@ -351,7 +352,7 @@
 	<section class="relative z-0 min-w-0 overflow-hidden rounded-xl border border-border bg-white p-4 md:p-5">
 		<h3 class="text-xs font-bold uppercase tracking-wide text-primary">Produk & Layanan Unggulan</h3>
 		<div class="mt-4">
-			<ProductSubForm bind:items={values.produk_layanan} errors={errors} />
+			<ProductSubForm bind:items={values.produk_layanan} errors={errors} {onuploading} />
 		</div>
 	</section>
 </div>
